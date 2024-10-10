@@ -8,7 +8,7 @@ import { BackgroundLinesDemo } from './BackgroudLinesDemo';
 
 const LandingPageHero = () => {
   return (
-    <div className='relative w-full flex flex-col bg-clip-text items-center md:min-h-screen'>
+    <div className='relative w-full flex flex-col items-center md:min-h-screen'>
       <BackgroundLinesDemo />
       <div className='relative w-full md:-translate-y-[45%] z-10'>
         <Image src={vectors} alt='bg' className='relative md:flex hidden w-full pointer-events-none' />
