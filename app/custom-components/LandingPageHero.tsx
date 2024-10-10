@@ -12,7 +12,7 @@ const LandingPageHero = () => {
       <BackgroundLinesDemo />
       <div className='relative w-full md:-translate-y-[45%] z-10'>
         <Image src={vectors} alt='bg' className='relative md:flex hidden w-full pointer-events-none' />
-        <Image src={bg} alt='bg' className='absolute md:-translate-y-[80%] -translate-y-[30%] w-full pointer-events-none' />
+        <Image src={bg} alt='bg' className='absolute md:flex hidden md:-translate-y-[80%] -translate-y-[30%] w-full pointer-events-none' />
       </div>
     </div>
   )

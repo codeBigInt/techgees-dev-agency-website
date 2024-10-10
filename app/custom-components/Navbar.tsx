@@ -8,9 +8,10 @@ import { useScrollHeight } from '../hookes/useScrollHeight';
 import { CiLight } from "react-icons/ci";
 import { CgDarkMode } from "react-icons/cg";
 import { ThemeContext } from '../context/ThemeWrapper';
+import { TbMenuDeep } from "react-icons/tb";
 
 const Navbar = () => {
-  const {toggleDarkMode, isDarkTheme} = useContext(ThemeContext)
+  const { toggleDarkMode, isDarkTheme } = useContext(ThemeContext)
   const scrollHeight = useScrollHeight()
 
   const navigation = [
@@ -21,7 +22,7 @@ const Navbar = () => {
   ]
   return (
     <div className='w-full md:px-[10%] z-[50] sticky top-0 px-4 bg-transparent flex items-center justify-between'>
-      <div className={`w-full flex py-4 items-center ${scrollHeight > 10 && "bg-white glassy bg-opacity-20 shadow-sm mt-4 px-6 transition-all ease-in rounded-[50px]"}`}>
+      <div className={`w-full flex py-4 items-center justify-between ${scrollHeight > 10 && "bg-white glassy bg-opacity-20 shadow-sm mt-4 px-6 transition-all ease-in rounded-[50px]"}`}>
         <h3 className='font-bold text-xl'>TECH GEE</h3>
         <ul className='md:flex hidden flex-1 justify-center items-center gap-8'>
           {
@@ -32,18 +33,16 @@ const Navbar = () => {
             ))
           }
         </ul>
-        <div>
-          <span>
-
-          </span>
-          <div className='flex items-center gap-3'>
-            <button onClick={toggleDarkMode} className='bg-btn font-bold p-3 text-white rounded-full'>
-              {isDarkTheme ? <CiLight /> : <CgDarkMode />}
-            </button>
-            <Button variant='bordered' color='secondary' icon={<PiPhoneCall size={20} />} className='border-primary-main hidden md:flex text-primary-main'>
-              Contact us
-            </Button>
-          </div>
+        <div className='flex items-center gap-3'>
+          <button onClick={toggleDarkMode} className='bg-btn font-bold p-3 text-white rounded-full'>
+            {isDarkTheme ? <CiLight /> : <CgDarkMode />}
+          </button>
+          <Button variant='bordered' color='secondary' icon={<PiPhoneCall size={20} />} className='border-primary-main hidden md:flex text-primary-main'>
+            Contact us
+          </Button>
+          <button className='font-bold p-3 flex md:hidden text-[28px] rounded-full'>
+            <TbMenuDeep />
+          </button>
         </div>
       </div>
     </div>
