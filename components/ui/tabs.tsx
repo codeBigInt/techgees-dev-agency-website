@@ -40,7 +40,7 @@ export const Tabs = ({
     <>
       <div
         className={cn(
-          "flex flex-row items-center justify-start [perspective:1000px] relative overflow-x-auto sm:overflow-visible py-4 no-visible-scrollbar max-w-full w-full",
+          "flex flex-row items-center justify-start [perspective:1000px] relative py-4 no-visible-scrollbar w-full",
           containerClassName
         )}
       >
@@ -68,7 +68,7 @@ export const Tabs = ({
               />
             )}
 
-            <span className="relative block whitespace-nowrap text-black dark:text-white">
+            <span className="relative block whitespace-nowrap">
               {tab.title}
             </span>
           </button>
@@ -100,7 +100,7 @@ export const FadeInDiv = ({
     return tab.value === tabs[0].value;
   };
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full">
       {tabs.map((tab, idx) => (
         <motion.div
           key={tab.value}
@@ -114,7 +114,7 @@ export const FadeInDiv = ({
           animate={{
             y: isActive(tab) ? [0, 40, 0] : 0,
           }}
-          className={cn("w-full h-full absolute top-0 left-0", className)}
+          className={cn("w-full absolute top-0 left-0", className)}
         >
           {tab.content}
         </motion.div>

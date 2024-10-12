@@ -17,24 +17,21 @@ export const ThemeContext = React.createContext<ThemeContextType>({
 })
 
 const ThemeWrapper = ({ children }: ThemeProp) => {
-    const [isDarkTheme, setIsDarkTheme] = useState<boolean>(() => {
-        const storedMode = localStorage.getItem('darkMode')
-        return storedMode ? JSON.parse(storedMode) : false
-    })
+    const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false)
 
     const toggleDarkMode = () => {
         setIsDarkTheme(!isDarkTheme)
-        localStorage.setItem('darkMode', JSON.stringify(isDarkTheme))
+        sessionStorage.setItem('darkMode', JSON.stringify(isDarkTheme))
     }
 
-    // useEffect(() => {
-    //     const storedMode = localStorage.getItem('darkMode')
-    //     if(storedMode){
-    //         setIsDarkTheme(JSON.parse(storedMode))
-    //     }else{
-    //         setIsDarkTheme(false)
-    //     }
-    // })
+    useEffect(() => {
+        const storedMode = sessionStorage.getItem('darkMode')
+        if(storedMode){
+            setIsDarkTheme(JSON.parse(storedMode))
+        }else{
+            setIsDarkTheme(false)
+        }
+    })
 
     return (
         <ThemeContext.Provider value={{ isDarkTheme, toggleDarkMode }}>

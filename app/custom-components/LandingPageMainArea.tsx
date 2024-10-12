@@ -28,7 +28,7 @@ const LandingPageMainArea = () => {
           </div>
         </div>
       </section>
-      <div className="h-[30rem] md:h-[40rem] [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-full  items-start justify-start md:my-40">
+      <div className="h-[30rem] md:h-[40rem] [perspective:1000px] relative flex flex-col max-w-5xl w-full  items-start justify-start md:my-40">
         <h3 className='md:text-[40px] text-[30px] font-bold py-6 w-full text-center md:text-left'>Our service</h3>
         <Tabs tabs={tabs} />
       </div>
