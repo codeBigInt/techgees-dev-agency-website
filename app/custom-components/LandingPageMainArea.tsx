@@ -3,10 +3,12 @@ import Button from './Button';
 import { IoChatbubblesOutline } from "react-icons/io5";
 import ServiceList from './ServiceList';
 import { HeroVideoDialogDemo } from './HeroVideoDialog';
+import { Tabs } from '@/components/ui/tabs';
+import { tabs } from '../assets/data/Servicestabs';
 
 const LandingPageMainArea = () => {
   return (
-    <div className='w-full flex flex-col items-center relative pt-32 md:pt-0'>
+    <div className='w-full flex flex-col items-center relative pt-10 md:pt-0'>
       <div className='w-full flex flex-col items-center'>
         <h3 className='md:text-[30px] text-[24px] self-center md:w-[60%] text-center font-bold'><span className='text-primary-main font-bold'>Business Experts'</span> Opinions on websites</h3>
         <p className='px-[10%] text-xs md:text-sm text-center text-gray-700'>Why Experts Say Not Having a Website Hurts Your Business. Watch to learn why!</p>
@@ -21,12 +23,15 @@ const LandingPageMainArea = () => {
           </p>
           <div className='w-full flex justify-center md:justify-start'>
             <Button color='primary' className='text-white shadow-sm py-3 ' variant='borderless' icon={<IoChatbubblesOutline size={24} />}>
-              Start a conversation our Team
+              Chat with Our Team
             </Button>
           </div>
         </div>
       </section>
-      <ServiceList />
+      <div className="h-[30rem] md:h-[40rem] [perspective:1000px] relative flex flex-col max-w-5xl w-full  items-start justify-start md:my-40">
+        <h3 className='md:text-[40px] text-[30px] font-bold py-6 w-full text-center md:text-left'>Our service</h3>
+        <Tabs tabs={tabs} />
+      </div>
     </div>
   )
 }

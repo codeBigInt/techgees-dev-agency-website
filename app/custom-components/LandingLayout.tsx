@@ -11,12 +11,12 @@ import { NextFont } from 'next/dist/compiled/@next/font'
 const LandingLayout = ({ children, poppins }: { children: React.ReactNode, poppins: NextFont }) => {
     const { isDarkTheme } = useContext(ThemeContext)
     return (
-        <body className={cn("w-full min-h-screen antialiased", {
+        <body className={cn("w-full overflow-x-hidden", {
             "bg-darkmode text-white": isDarkTheme,
             "bg-body text-[#1C163C]": !isDarkTheme
         }, poppins.className)}>
             <Navbar />
-            <div className='w-full md:px-[10%] px-4'>
+            <div className='w-full overflow-x-hidden md:px-[10%] px-4'>
                 {children}
             </div>
             <Footer />

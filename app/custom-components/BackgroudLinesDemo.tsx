@@ -33,10 +33,10 @@ export function BackgroundLinesDemo() {
                 <p className={`md:text-sm text-xs font-light  ${isDarkTheme ? "text-white" : "text-gray-600"}`}>We are dedicated to creating aesthetic user interfaces for business helping them reach out to customers form any part of the world</p>
             </div>
             <div className='flex flex-col w-full md:justify-center cursor-pointer md:flex-row items-center gap-6 py-6'>
-                <Button className='bg-btn text-white md:w-max w-[50%]' variant='bordered' color='primary'>
+                <Button className='bg-btn text-white md:w-max w-[80%]' variant='bordered' color='primary'>
                     Visit Our Blog
                 </Button>
-                <Button className='border-primary-yellow text-primary-yellow md:w-max w-[50%]' variant='bordered' color='secondary' icon={<RiWhatsappFill size={20} />}>
+                <Button className='border-primary-yellow text-primary-yellow md:w-max w-[80%]' variant='bordered' color='secondary' icon={<RiWhatsappFill size={20} />}>
                     Let's Talk
                 </Button>
             </div>

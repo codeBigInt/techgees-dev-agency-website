@@ -9,6 +9,16 @@ import { CiLight } from "react-icons/ci";
 import { CgDarkMode } from "react-icons/cg";
 import { ThemeContext } from '../context/ThemeWrapper';
 import { TbMenuDeep } from "react-icons/tb";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+import { FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
   const { toggleDarkMode, isDarkTheme } = useContext(ThemeContext)
@@ -40,9 +50,33 @@ const Navbar = () => {
           <Button variant='bordered' color='secondary' icon={<PiPhoneCall size={20} />} className='border-primary-main hidden md:flex text-primary-main'>
             Contact us
           </Button>
-          <button className='font-bold p-3 flex md:hidden text-[28px] rounded-full'>
-            <TbMenuDeep />
-          </button>
+          <aside className='md:hidden'>
+            <Sheet>
+              <SheetTrigger>
+                <button className='font-bold p-3 flex md:hidden text-[28px] rounded-full'>
+                  <TbMenuDeep />
+                </button>
+              </SheetTrigger>
+              <SheetContent>
+                <SheetClose>
+                  <button className='p-3 font-bold border border-gray-600 rounded-full'>
+                    <FaTimes />
+                  </button>
+                </SheetClose>
+                <div className='flex flex-col gap-6'>
+                  {
+                    navigation.map((route) => (
+                      <SheetClose key={route.link}>
+                        <Link href={route.href}>
+                          {route.link}
+                        </Link>
+                      </SheetClose>
+                    ))
+                  }
+                </div>
+              </SheetContent>
+            </Sheet>
+          </aside>
         </div>
       </div>
     </div>
