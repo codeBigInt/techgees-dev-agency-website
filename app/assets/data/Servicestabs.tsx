@@ -1,7 +1,7 @@
 import Image from "next/image";
 import webD from "../web-d.jpg"
 
-const DummyContent = () => {
+const DummyContent = ({image}: {image?: string}) => {
     return (
       <Image
         src={webD}
